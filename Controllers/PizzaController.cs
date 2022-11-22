@@ -44,8 +44,8 @@ namespace la_mia_pizzeria_static.Controllers
                 return View();
             }
 
-            //db.Pizze.Add(modello);
-            //db.SaveChanges();
+            db.Pizze.Add(modello);
+            db.SaveChanges();
 
             return RedirectToAction("Index");
         }
