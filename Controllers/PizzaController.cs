@@ -27,5 +27,27 @@ namespace la_mia_pizzeria_static.Controllers
 
             return View(pizza);
         }
+
+        //ritorna la view del form
+        public IActionResult Create()
+        {
+            return View("Create");
+        }
+
+        //si occupa della richiesta post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Pizza modello)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            //db.Pizze.Add(modello);
+            //db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
